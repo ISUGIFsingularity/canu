@@ -1,0 +1,3 @@
+#!/bin/bash
+
+singularity exec --bind $canugit:/mnt --bind $PWD $canugit/SIMG/ISUGIFsingularity-canu-master.simg $@

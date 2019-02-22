@@ -33,7 +33,7 @@ export PATH=$PATH:$canugit/wrappers
 Place the following into your .bashrc folder to use scripts without container (preferred method unless testing container functions)
 
 ```
-alias canugit=Path2thisRepo
+export canugit=`pwd`
 export PATH=$PATH:$canugit/canu
 ```
 

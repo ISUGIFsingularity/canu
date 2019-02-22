@@ -5,7 +5,7 @@
 ```
 mkdir isugif
 cd isugif
-git clone git@github.com:ISUGIFsingularity/masurca.git
+git clone git@github.com:ISUGIFsingularity/canu.git
 ```
 
 ### Place singularity container into SIMG folder inside this repo
@@ -13,11 +13,11 @@ git clone git@github.com:ISUGIFsingularity/masurca.git
 You can pull the singularity image using these commands
 
 ```
-cd masurca
+cd canu
 mkdir SIMG
 cd SIMG
-singularity pull shub://ISUGIFsingularity/masurca:3.2.9
-ln -s ISUGIFsingularity-masurca-master-3.2.9.simg  ISUGIFsingularity-masurca-master.simg
+singularity pull shub://ISUGIFsingularity/canu:3.2.9
+ln -s ISUGIFsingularity-canu-master-3.2.9.simg  ISUGIFsingularity-canu-master.simg
 ```
 
 ### Add Alias and PATH
@@ -25,25 +25,25 @@ ln -s ISUGIFsingularity-masurca-master-3.2.9.simg  ISUGIFsingularity-masurca-mas
 Place the following into your .bashrc folder for container use
 
 ```
-#make sure you are in the masurca folder that corresponds to the Path2thisRepo
-export masurcagit=`pwd`
-export PATH=$PATH:$masurcagit/wrappers
+#make sure you are in the canu folder that corresponds to the Path2thisRepo
+export canugit=`pwd`
+export PATH=$PATH:$canugit/wrappers
 ```
 
 Place the following into your .bashrc folder to use scripts without container (preferred method unless testing container functions)
 
 ```
-alias masurcagit=Path2thisRepo
-export PATH=$PATH:$masurcagit/masurca
+alias canugit=Path2thisRepo
+export PATH=$PATH:$canugit/canu
 ```
 
 
 ### Notes
 
-For this to function properly had to add ```--bind $masurcagit:/mnt``` to the wrappers
+For this to function properly had to add ```--bind $canugit:/mnt``` to the wrappers
 
 Example
 
 ```
- singularity exec --bind $masurcagit:/mnt --bind $PWD $masurcagit/SIMG/ISUGIFsingularity-masurca-master.simg /mnt/masurca/summary.sh
+ singularity exec --bind $canugit:/mnt --bind $PWD $canugit/SIMG/ISUGIFsingularity-canu-master.simg /mnt/canu/summary.sh
 ```

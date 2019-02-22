@@ -7,7 +7,7 @@ APPLICATION MaSurCArunScripts
 
 %help
 This container contains all the necessary programs to run MaSuRCA
-See https://github.com/ISUGIFsingularity/masurca.git for more inforation
+See https://github.com/ISUGIFsingularity/canu.git for more inforation
 
 %environment
 source /etc/profile.d/modules.sh
@@ -18,10 +18,8 @@ source /etc/profile.d/modules.sh
 source $SPACK_ROOT/share/spack/setup-env.sh
 #for d in /opt/spack/opt/spack/linux-centos7-x86_64/gcc-4.8.5/*/bin; do export PATH="$PATH:$d"; done
 
-# make sure spack is up2date
-
 module load perl
-module load masurca
+module load canu
 
 
 
@@ -36,10 +34,10 @@ cd $SPACK_ROOT
 git pull
 
 # modify package to include latest verson
-awk '/v1.5.tar.gz/ { print; print "\n";printf "    version('\''1.8.0'\'', '\''b2543a06787368763d2183388160a00e'\'', url='\'https://github.com/marbl/canu/releases/download/v1.8/canu-1.8.Linux-amd64.tar.xz'\'')"; next }1' $SPACK_ROOT/var/spack/repos/builtin/packages/masurca/package.py  > package.py
+awk '/v1.5.tar.gz/ { print; print "\n";printf "    version('\''1.8.0'\'', '\''b2543a06787368763d2183388160a00e'\'', url='\'https://github.com/marbl/canu/releases/download/v1.8/canu-1.8.Linux-amd64.tar.xz'\'')"; next }1' $SPACK_ROOT/var/spack/repos/builtin/packages/canu/package.py  > package.py
 
 
-mv package.py $SPACK_ROOT/var/spack/repos/builtin/packages/masurca/
+mv package.py $SPACK_ROOT/var/spack/repos/builtin/packages/canu/
 cd -
 
 

@@ -62,7 +62,7 @@ popd
 
 
 
-spack install masurca@1.8.0
+spack install canu@1.8.0
 
 
 

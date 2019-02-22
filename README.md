@@ -16,8 +16,8 @@ You can pull the singularity image using these commands
 cd canu
 mkdir SIMG
 cd SIMG
-singularity pull shub://ISUGIFsingularity/canu:3.2.9
-ln -s ISUGIFsingularity-canu-master-3.2.9.simg  ISUGIFsingularity-canu-master.simg
+singularity pull shub://ISUGIFsingularity/canu:1.8.0
+ln -s ISUGIFsingularity-canu-master-1.8.0.simg  ISUGIFsingularity-canu-master.simg
 ```
 
 ### Add Alias and PATH
